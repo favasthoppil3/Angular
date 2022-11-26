@@ -21,6 +21,7 @@ export class SignupComponent implements OnInit {
   constructor(private RF:FormBuilder) { }
 
   ngOnInit(): void {
+
   }
 
   submit(){
