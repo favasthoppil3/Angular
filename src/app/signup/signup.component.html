@@ -1,0 +1,101 @@
+<app-navbar></app-navbar>
+
+<section class="bg overflow-hidden">
+
+    <div class="container py-4  text-lg-start ">
+        <div class="row gx-lg-5  align-items-center mb-5">
+
+            
+
+            <div class="col-lg-6  mb-5 mb-lg-0  ">
+
+                <div class="shadow rounded bg-glass">
+                    <div class="card-body px-4 py-5 px-md-5">
+                        <div class="text-center "><h2>Employee Details</h2></div>
+                        <form [formGroup]="registerForm">
+                            <div class="row">
+
+                                <div class="col-md-6 mb-2">
+                                    <div class="form-outline">
+                                        <label class="form-label" >Name</label>
+                                        <input type="text"  class="form-control"formControlName="name"  [ngClass]="{'is-invalid':submitted && registerForm.controls.name.errors}" >
+                                        <div *ngIf="submitted && registerForm.controls.name.errors" class="text-danger">Name is required</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-2">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="form3Example2">Date of Birth</label>   
+
+                                        <input type="date"  class="form-control"formControlName="Dob" [ngClass]="{'is-invalid':submitted && registerForm.controls.Dob.errors}" />
+                                            <div *ngIf="submitted && registerForm.controls.Dob.errors" class="text-danger">Date of birth is required</div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-outline mb-2">
+                                <label class="form-label" for="form3Example3">Address</label>
+                                <textarea class="form-control" formControlName="address"></textarea>
+                                <div *ngIf="submitted && registerForm.controls.address.errors" class="text-danger">Address is required</div>
+                               
+                            </div>
+
+                            <div class="form-outline mb-3">
+                                <label class="form-label" for="form3Example4">Role</label>
+                                <select class="form-select" formControlName="Role" >
+                                    <option value="Admin">Admin</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="HR">HR</option>
+                                    <option value="Developer">Developer</option>
+                                </select>
+                                <div *ngIf="submitted && registerForm.controls.Role.errors" class="text-danger">Role is required</div>
+
+                                    
+                            </div>
+
+                            <div class="form-outline mb-2">
+                                <label class="form-label" for="form3Example3">Phone</label>
+                                <input type="tel"  class="form-control" formControlName="phone" [ngClass]="{'is-invalid':submitted && registerForm.controls.Dob.errors}" />
+                                <div *ngIf="submitted && registerForm.controls.Dob.errors" class="text-danger">Phone number is required
+                                </div>
+                               
+                            </div>
+
+                            <div class="form-outline mb-2">
+                                <label for="">Gender</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="Gender" value="male" checked>
+                                <label class="form-check-label">
+                                  Male
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio"  formControlName="Gender" value="female">
+                                <label class="form-check-label" for="exampleRadios2">
+                                  Female
+                                </label>
+                              </div>
+                             
+
+
+                            
+
+                            <div class="d-flex ">
+                                <button type="submit" (click)="submit()" class="btn btn-outline-primary shadow btn-block  w-25 ms-auto" style="border-radius:100px ;">
+                                   Submit
+                                </button>
+                            </div>
+       
+
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
