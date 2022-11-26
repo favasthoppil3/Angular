@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +20,7 @@ export class SignupComponent implements OnInit {
     Gender:['',[Validators.required]]
   })
   
-  constructor(private RF:FormBuilder) { }
+  constructor(private RF:FormBuilder,private route:Router) { }
 
   ngOnInit(): void {
 
@@ -43,6 +44,7 @@ export class SignupComponent implements OnInit {
       localStorage.setItem('employeeData',JSON.stringify(this.registerForm.value))
       console.log("value",this.registerForm.value)  
       alert("Employee submited")
+      this.route.navigateByUrl('/home')
       
     }
 
