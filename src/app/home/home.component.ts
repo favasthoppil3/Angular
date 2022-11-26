@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   
 
   ngOnInit(): void {
-    // this.data= JSON.parse(localStorage.getItem("employeeData"))
+    this.data=JSON.parse(localStorage.getItem('employeeData'))
 
     console.log("empData",this.data)
   }

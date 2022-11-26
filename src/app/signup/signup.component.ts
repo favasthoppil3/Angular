@@ -15,6 +15,7 @@ export class SignupComponent implements OnInit {
     Dob:['',[Validators.required]],  
     address:['',[Validators.required]],
     Role:['',[Validators.required]],
+    Phone:['',[Validators.required]],
     Gender:['',[Validators.required]]
   })
   
@@ -41,6 +42,7 @@ export class SignupComponent implements OnInit {
     if(this.registerForm.valid){
       localStorage.setItem('employeeData',JSON.stringify(this.registerForm.value))
       console.log("value",this.registerForm.value)  
+      alert("Employee submited")
       
     }
 
